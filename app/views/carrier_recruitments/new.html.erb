@@ -1,0 +1,15 @@
+<% content_for :title do %>
+  Independent Contractor Inquiry
+<% end %>
+<%= form_for @carrier_recruitment, html: {role: 'form', class: 'form-horizontal'} do |f| %>
+  <%= render partial: 'layouts/form_errors', locals: {target: @carrier_recruitment} %>
+  
+  <%= render partial: 'form', locals: {f: f} %>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= link_to 'Cancel', root_path, class: 'btn btn-default', role: 'button' %>
+      <%= f.submit 'Submit', class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

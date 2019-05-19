@@ -1,0 +1,108 @@
+/*
+ * From bootstrap-sass documentation:
+ *
+ * Do not use //= require in Sass or your other stylesheets will not be able to access
+ * the Bootstrap mixins or variables.
+ * See: https://github.com/twbs/bootstrap-sass/issues/79#issuecomment-4428595
+ */
+@import "bootstrap-sprockets";
+@import "cerulean/variables";
+@import "bootstrap";
+@import "cerulean/bootswatch";
+
+
+/* Add text shadows to buttons and navbar links so that they stand out more. */
+.btn, .nav-navbar > li > a { text-shadow: 1px 1px rgba(0,0,0,0.34); }
+
+/*
+ * Pad the top of the body tag, to make room for the nav bar, and decrease margins in the page-header.
+ * Also, make the active breadcrumb stand out a bit more.
+ */
+body { padding-top: 75px; }
+.page-header { margin-top: 0; }
+.page-header ol.breadcrumb { margin-bottom: 1px; }
+.page-header ol.breadcrumb > li.active { color: #333333; font-weight: bold; }
+.page-header + div.row > h3 { margin-top: 2px; }
+
+/* Style the breadcrumb links more like buttons. */
+.page-header ol.breadcrumb > li > a {
+  @extend .btn, .btn-xs, .btn-info;
+  text-shadow: none;
+}
+
+/* Main navigational header */
+body > header > nav.navbar {
+  -moz-box-shadow:    0 5px 6px 1px rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: 0 5px 6px 1px rgba(0, 0, 0, 0.24);
+  box-shadow:         0 5px 6px 1px rgba(0, 0, 0, 0.24);
+
+  /* Specific spacing for the branding logo. */
+  .navbar-brand {
+    padding: 15px 15px 11px 15px; font-weight: bold; font-height: 1.2em;
+  }
+}
+
+/* Customize how tab navbars are rendered. */
+.nav-tabs {
+
+  > li {
+    /* Ensures that the lower portion of the "hover" box shadow is hidden. */
+    overflow-x: visible; overflow-y: hidden;
+    
+    /* Moves the first tab over the left so it stands out from the bottom border. */
+    &:first-child { margin-left: 5px; }
+  }
+
+  > li > a {
+    color: #777; background-color: #f2f8f9;
+    /* padding-top: 7px; padding-bottom: 7px; */
+    top: 4px; left: 1px;
+  
+    &:hover {
+      color: #555; background-color: #ffffff;
+      text-shadow: 1px 1px rgba(0,0,0,0.27);
+      -moz-box-shadow:    0 1px 5px 0 rgba(0, 0, 0, 0.24);
+      -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.24);
+      box-shadow:         0 1px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+  }
+  
+  > li.active > a {
+    /* padding-top: 10px; padding-bottom: 10px; */
+    top: 0; left: 0;
+    text-shadow: 1px 1px rgba(0,0,0,0.27);
+  
+    &:hover {
+      text-shadow: 1px 1px rgba(0,0,0,0.27);
+      -moz-box-shadow:    none;
+      -webkit-box-shadow: none;
+      box-shadow:         none;
+    }
+  }
+}
+
+/* Fix uncleared floats in wells and dd */
+.well, dd { @extend .clearfix; }
+
+/* Remove bottom margins on address tags directly under a td. */
+td > address { margin-bottom: 0; }
+
+/* Add top margins on stacked button directly under a td, separated by a br. */
+td > br + .btn { margin-top: 0.3em; }
+
+/* A convenient short-hand for read-only form elements. */
+span.form-control {
+  @extend .form-control;
+  @extend .form-control[readonly];
+  background-color: #f5f9fa;
+}
+
+/* Allow form labels to have centered or left-aligned text. */
+.form-horizontal .control-label.text-center { text-align: center; }
+.form-horizontal .control-label.text-left { text-align: left; }
+
+/* Add vertical margins to fieldsets, and text shadows to their legends. */
+fieldset {
+  margin: 24px 0;
+  legend { text-shadow: 1px 1px rgba(0,0,0,0.37); }
+}

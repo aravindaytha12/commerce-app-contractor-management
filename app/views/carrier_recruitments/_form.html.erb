@@ -1,0 +1,204 @@
+<fieldset>
+  <legend>
+    Contact Information <small class='text-muted'>Información Del Contacto</small>
+  </legend>
+
+  <div class="form-group">
+    <%# f.label :first_name, 'First &amp; Last name'.html_safe, class: 'col-sm-2 control-label' %>
+    <%# f.label :first_name, 'Nombre y Apellido'.html_safe, class: 'col-sm-2 control-label small text-muted' %>
+    <label class="col-sm-2 control-label">
+      <div>First &amp; Last Name</div>
+      <div class='small text-muted'>Nombre y Apellido</div>
+    </label>
+    <div class="col-sm-2">
+      <%= f.text_field :first_name, class: 'form-control', placeholder: 'First name' %>
+    </div>
+    <div class="col-sm-2">
+      <%= f.text_field :last_name, class: 'form-control', placeholder: 'Last name' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%# f.label :address_line, class: 'col-sm-2 control-label' %>
+    <label class='col-sm-2 control-label'>
+      <div>Street Address</div>
+      <div class="small text-muted">Dirección</div>
+    </label>
+    <div class="col-sm-6">
+      <%= f.text_field :address_line, maxlength: 50, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%# f.label :city_state_zip, 'City, State &amp; Zip code'.html_safe, class: 'col-sm-2 control-label' %>
+    <label class='col-sm-2 control-label'>
+      <div> City, State, ZIP code </div>
+      <div class='small text-muted'> Ciudad, Estado y Código Postal </div>
+    </label>
+    <div class="col-sm-3">
+      <%= f.text_field :city, maxlength: 40, class: 'form-control', placeholder: 'City' %>
+    </div>
+    <div class="col-sm-2">
+      <%= f.select :state, state_options, {include_blank: '(Select One)'}, class: 'form-control' %>
+    </div>
+    <div class="col-sm-2">
+      <%= f.text_field :zip_code, maxlength: 10, class: 'form-control', placeholder: 'Zip Code' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%# f.label :phone_number, class: 'col-sm-2 control-label' %>
+    <label class='col-sm-2 control-label'>
+      <div> Phone Number </div>
+      <div class='small text-muted'> Número de Teléfono </div>
+    </label>
+    <div class="col-sm-2">
+      <%= f.text_field :phone_number, class: 'form-control' %>
+    </div>
+    <%# f.label :email, class: 'col-sm-1 control-label' %>
+    <label class='col-sm-2 control-label'>
+      <div> Email </div>
+      <div class='small text-muted'> Email </div>
+    </label>
+    <div class="col-sm-3">
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%# f.label :phone_number2, class: 'col-sm-2 control-label' %>
+    <label class='col-sm-2 control-label'>
+      <div> Alternate Phone # </div>
+      <div class='small text-muted'> Numero de Teléfono alternativo </div>
+    </label>
+    <div class="col-sm-2">
+      <%= f.text_field :phone_number2, class: 'form-control' %>
+    </div>
+  </div>
+  <br/>
+  <div class="form-group">
+    <%# f.label :paper_to_deliver, 'Select local newspaper', class: 'col-sm-offset-1 col-sm-4 control-label text-left' %>
+    <label class='col-sm-offset-1 col-sm-4 control-label text-left'>
+      <div>Select local newspaper</div>
+      <div class='small text-muted'>Periódico Local</div>
+    </label>
+    <%# f.label :best_time_to_reach, 'What are the best times to reach you?', class: 'col-sm-4 control-label text-left' %>
+    <label class='col-sm-offset-1 col-sm-4 control-label text-left'>
+      <div>What are the best times to reach you?</div>
+      <div class='small text-muted'>¿ Cuál es la mejor hora para contactarlo</div>
+    </label>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-1 col-sm-3">
+      <%= f.select :paper_to_deliver, paper_to_deliver_options, {include_blank: '(Select One)'}, class: 'form-control' %>
+    </div>
+    <div class="col-sm-offset-1 col-sm-4">
+      <%= f.text_area :best_time_to_reach, rows: 2, class: 'form-control' %>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset>
+  <div class="form-group">
+    <%# f.label :how_did_you_hear, 'How did you hear about contract availability?', class: 'col-sm-offset-1 col-sm-7 control-label text-left' %>
+    <label class='col-sm-offset-1 col-sm-7 control-label text-left'>
+      <div>How did you hear about contract availability?</div>
+      <div class='small text-muted'>¿ Cómo aprendió del contrato disponible</div>
+    </label>
+  </div>
+  <%# Column One of Radio Bottoms  </%>
+  <div class="form-group">
+    <div class="col-sm-offset-1 col-sm-1">
+      <div class="radio">
+        <label> <%= f.radio_button :how_did_hear, 'craigslist' %> Craigslist </label>
+      </div>
+      <div class="radio">
+        <label> <%= f.radio_button :how_did_hear, 'post-it' %> Post-it </label>
+      </div>
+      <div class="radio">
+        <label> <%= f.radio_button :how_did_hear, 'flier' %> Flier </label>
+      </div>
+      <div class="radio">
+        <label> <%= f.radio_button :how_did_hear, 'careerbuilder' %> CareerBuilder </label>
+      </div>
+    </div>
+  <%# Column Two of Radio Bottoms  </%>
+    <div class="col-sm-offset-1 col-sm-2">
+      <div class="radio">
+        <label> <%= f.radio_button :how_did_hear, 'digitalad' %> Digital Ad </label>
+      </div>
+      <div class="radio">
+        <label> <%= f.radio_button :how_did_hear, 'billboard' %> Billboard </label>
+      </div>
+      <div class="radio">
+        <label> <%= f.radio_button :how_did_hear, 'yardsign' %> Yard Sign </label>
+      </div>
+      <div class="radio">
+        <label> <%= f.radio_button :how_did_hear, 'newspaperad' %> Newspaper Ad </label>
+      </div>
+    </div>
+  <%# Column Three of Radio Bottoms  </%>
+    <div class="col-sm-offset-0 col-sm-7">
+      <div class="row" style="margin-bottom: 5px;">
+        <div class="col-sm-2">
+          <div class="radio">
+            <label>
+              <%= f.radio_button :how_did_hear, 'referral' %>
+              <div>Referral</div>
+              <div class='small text-muted'> Referrido </div>
+            </label>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <%= f.text_field :referral_code, maxlength: 25, class: 'form-control', placeholder: 'Referral Code',
+                           disabled: (f.object.how_did_hear!='referral') %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="radio">
+            <label>
+              <%= f.radio_button :how_did_hear, 'other' %>
+              <div> Other </div>
+              <div class='small text-muted'> Otra </div>
+            </label>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <%= f.text_area :other_source, rows: 3, class: 'form-control',
+                           disabled: (f.object.how_did_hear!='other') %>
+        </div>
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset>
+  <div class="form-group">
+    <label class='col-sm-2 control-label'>
+      <div> Preferred Language </div>
+      <div class='small text-muted'>Idioma preferido</div>
+    </label>
+    <div class="col-sm-2">
+      <%= f.select :preferred_language, ["English", "Spanish"], {include_blank: '(Select One)'}, class: 'form-control' %>
+    </div>
+  </div>
+
+</fieldset>
+<% content_for :head do %>
+<%= javascript_tag do %>
+jQuery(function($) {
+  $('input[type="radio"][name="carrier_recruitment\[how_did_hear\]"]').
+    click(function() {
+      var value         = this.value,
+          referral_code = $('#carrier_recruitment_referral_code'),
+          other_source  = $('#carrier_recruitment_other_source');
+
+      if (value == 'referral')
+        referral_code.removeAttr('disabled');
+      else
+        referral_code.attr('disabled','disabled');
+      if (value == 'other')
+        other_source.removeAttr('disabled');
+      else
+        other_source.attr('disabled','disabled');
+    });
+});
+<% end %>
+<% end %>

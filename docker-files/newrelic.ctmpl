@@ -1,0 +1,9 @@
+{{with $secret := secret "secret/CommerceDevOps/contractor-management/{RAILS_ENV}/newrelic_config" }}
+common: &default_settings
+  license_key: {{$secret.Data.license_key}}
+  labels: application:contractor-management;environment:{RAILS_ENV}
+{RAILS_ENV}:
+  <<: *default_settings
+  app_name: contractor-management-{RAILS_ENV}
+  log_level: info
+{{end}}

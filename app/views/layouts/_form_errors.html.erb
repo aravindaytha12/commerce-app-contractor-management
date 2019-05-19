@@ -1,0 +1,10 @@
+<% if target.present? and target.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <b>Whoops! &mdash; There were <%= pluralize(target.errors.count, "error") %> with your submission: </b> <br/> 
+    <ul>
+      <% target.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>        

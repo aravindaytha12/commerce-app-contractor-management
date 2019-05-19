@@ -1,0 +1,9 @@
+en:
+  attributes:
+    address_line:         "Street address"
+    phone_number2:        "Alternate Phone #"
+    paper_to_deliver:     "Local newspaper"
+    best_time_to_reach:   "Best time to reach you"
+    how_did_hear:         "How did you hear about contract availability"
+    referral_code:        "How did you hear about contract availability - Referral code"
+    other_source:         "How did you hear about contract availability - Other"

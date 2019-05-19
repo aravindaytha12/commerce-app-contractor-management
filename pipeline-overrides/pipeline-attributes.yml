@@ -1,0 +1,5 @@
+image: "commerce-contractor-management"
+lb_role_id:
+  development: 19854
+  staging: 21013
+  production: 21133

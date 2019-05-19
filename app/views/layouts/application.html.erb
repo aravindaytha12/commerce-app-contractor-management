@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= page_title %> - Gannett Newspapers</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=10" />
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <%= yield(:head) %>
+</head>
+<body>
+  <header>
+    <%= render 'layouts/navigation' %>
+  </header>
+  <main role="main">
+    <div class="container">
+      <% if content_for?(:page_header) %> <div class="page-header">
+        <%= yield :page_header %>
+      </div> <% end %>
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+      <p class="clearfix">&nbsp;</p>
+    </div>
+  </main>
+</body>
+</html>
